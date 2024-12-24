@@ -1,11 +1,11 @@
 import pandas as pd
 from gensim.corpora.dictionary import Dictionary
-from gibbs import LDAGibbsP
-from data_preprocess import data_preprocess
-from word_cloud import word_cloud
+from SpecificLDA.gibbs import LDAGibbsP
+from SpecificLDA.data_preprocess import data_preprocess
+from SpecificLDA.word_cloud import word_cloud
 
 
-def specific_lda(file_path, user_dict_path = 'built', stopwords_path = 'built', n_rounds = 5,
+def specific_lda(file_path = None, user_dict_path = 'built', stopwords_path = 'built', n_rounds = 5,
                  n_iter = 5, K = 2, topic_name = 'macro_economy', priori_word = ['宏观经济','数字经济'],
                  priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
                  n_evaluate_words = 100, priori_type = 'multi_alpha', init_base = 'alpha',
@@ -25,7 +25,7 @@ def specific_lda(file_path, user_dict_path = 'built', stopwords_path = 'built', 
         'priori_word_percent':priori_word_percent, # 重要
         'priori_data_balance':priori_data_balance,
         'n_evaluate_words':n_evaluate_words,
-        'priori_type':priori_type, # 重要 same/multi_alpha
+        'priori_type':priori_type, # 重要 same_alpha/multi_alpha
         'init_base':init_base,
         'n_top_words':n_top_words,
     }

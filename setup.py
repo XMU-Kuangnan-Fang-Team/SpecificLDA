@@ -21,11 +21,8 @@ setup(
         'PIL',
         'pathlib',
         'jieba',
-        're',
         'gensim',
         'tqdm',
-        'os',
-        'math',
         'setuptools' 
     ],
     inlude_package_data = True,
