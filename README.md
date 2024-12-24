@@ -1,2 +1,2 @@
-## `SpecificLDA`: A Python library implementing the Specific LDA model for targeted extraction of specific topics from text data
+## `SpecificLDA`: 一个用于从文本数据中针对性提取特定主题的Python包
 
