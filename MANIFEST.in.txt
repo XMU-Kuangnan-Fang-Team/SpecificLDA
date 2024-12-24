@@ -1,0 +1,7 @@
+include data/*
+recursive-include data *
+include wordcloud_image.jpg
+include __init__.py
+include LICENSE.txt
+include README.md
+global-exclude __pycache__
