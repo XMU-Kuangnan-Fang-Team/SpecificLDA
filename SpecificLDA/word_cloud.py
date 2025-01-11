@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, ImageColorGenerator
-from PIL import Image
+from Pillow import Image
 import numpy as np
 from pathlib import Path
 
