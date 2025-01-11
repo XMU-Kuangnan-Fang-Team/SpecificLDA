@@ -18,7 +18,7 @@ setup(
         'pandas',
         'matplotlib',
         'wordcloud',
-        'PIL',
+        'Pillow',
         'pathlib',
         'jieba',
         'gensim',
