@@ -1,7 +1,6 @@
 import pandas as pd
 from gensim.corpora.dictionary import Dictionary
 from SpecificLDA.gibbs import LDAGibbsP
-from SpecificLDA.data_preprocess import data_preprocess
 from SpecificLDA.word_cloud import word_cloud
 
 
