@@ -4,9 +4,9 @@ from SpecificLDA.gibbs import LDAGibbsP
 from SpecificLDA.word_cloud import word_cloud
 
 
-def specific_lda(data_process, n_rounds = 5, n_iter = 5, K = 2, topic_name = 'macro_economy', 
-                 priori_word = ['宏观经济','数字经济'], priori_weight = 'average', 
-                 priori_word_percent = 0.2, priori_data_balance = 1,
+def specific_lda(data_process, n_rounds = 5, n_iter = 5, K = 2, topic_name = 'macro_economy',
+                 priori_word = ['宏观经济','数字经济'],
+                 priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
                  n_evaluate_words = 100, priori_type = 'multi_alpha', init_base = 'alpha',
                  n_top_words = 100, wordcloud = True, process_result = False):
     

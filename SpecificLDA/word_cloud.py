@@ -11,14 +11,14 @@ def word_cloud(dictionary, background_color='white', image_path = None,
               stopwords = {}, max_font_size = 150, 
               random_state = 1, scale = 1):
     current_file_path = Path(__file__).resolve()
-    current_dir = current_file_path.parent.parent
+    current_dir = current_file_path.parent
     fre = {}
     for kw in list(dictionary.token2id.keys()):
         fre[kw] = dictionary.cfs[dictionary.token2id[kw]]
     
     # 背景路径为内置或给定
     if image_path == None:
-        backgroud_Image = np.array(Image.open(current_dir / 'wordcloud_image.jpg'))
+        backgroud_Image = np.array(Image.open(current_dir / 'data' / 'wordcloud_image.jpg'))
     else:
         backgroud_Image = np.array(Image.open(image_path))
     

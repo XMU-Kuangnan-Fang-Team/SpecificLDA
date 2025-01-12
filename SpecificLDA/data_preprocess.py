@@ -5,9 +5,9 @@ from pathlib import Path
 from SpecificLDA.simulation_data import read_simulation_data
 
 
-def data_preprocess(file_path = None, user_dict_path = None, stopwords_path = None):
+def data_preprocess(file_path = None, user_dict_path = 'built', stopwords_path = 'built'):
     current_file_path = Path(__file__).resolve()
-    current_dir = current_file_path.parent.parent
+    current_dir = current_file_path.parent
     
     # 读入文本数据
     if file_path == None:

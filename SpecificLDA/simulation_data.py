@@ -6,7 +6,7 @@ def read_simulation_data(data_folder = 'newspaper'):
     
     # 获取当前文件所在的目录
     current_file_path = Path(__file__).resolve()
-    current_dir = current_file_path.parent.parent
+    current_dir = current_file_path.parent
     
     # 读入文本数据
     data_dict = {}
