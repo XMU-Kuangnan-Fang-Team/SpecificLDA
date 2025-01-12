@@ -10,7 +10,7 @@ SpecificLDA是一个基于定向LDA模型，用于从文本中提取指定主题
 ### 安装
 推荐从Github上下载并安装该Python包：
 ```c
-git clone https://github.com/ruiqwy/SpecificLDA.git
+git clone https://github.com/XMU-Kuangnan-Fang-Team/SpecificLDA.git
 cd SpecificLDA
 ```
 之后运行以下代码来安装项目：
@@ -26,7 +26,7 @@ pip install .
 - [epu_plot](#epu_plot)
 
 #### read_simulation_data
-用于读取示例文本数据的函数。该函数仅读取内置的示例数据，返回一个键为日期值为文本的字典。
+用于读取示例文本数据的函数。该函数仅读取内置的示例数据，返回一个键为日期值为文本的字典。参数不需要设置。
 ##### 用法
 ```c
 read_simulation_data(data_folder = 'newspaper')
@@ -61,18 +61,16 @@ process_data = data_preprocess(file_path = None, user_dict_path = 'built', stopw
 用于运行定向LDA模型的函数，返回估计出的参数，分类结果以及每个文本的日期。
 ##### 用法
 ```c
-specific_lda(file_path = None, user_dict_path = 'built', stopwords_path = 'built', n_rounds = 5,
-                 n_iter = 5, K = 2, topic_name = 'macro_economy', priori_word = ['宏观经济','数字经济'],
-                 priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
-                 n_evaluate_words = 100, priori_type = 'multi_alpha', init_base = 'alpha',
-                 n_top_words = 100, wordcloud = True, process_result = False)
+specific_lda(data_process, n_rounds = 5, n_iter = 5, K = 2, topic_name = 'macro_economy',
+             priori_word = ['宏观经济','数字经济'],
+             priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
+             n_evaluate_words = 100, priori_type = 'multi_alpha', init_base = 'alpha',
+             n_top_words = 100, wordcloud = True, process_result = False)
 ```
 ##### 参数
 |参数|描述|
 |:---:|:---:|
-file_path|待处理文档的路径。输入形式应为一个包含多个txt或csv文件的文件夹，读取该文件夹的路径。若为None则读取内置示例数据。
-user_dict_path|分词表的路径。分为内置(built)，不使用(None)和自定义，格式为词汇，权重(可选)和词性(可选)。
-stopwords_path|停用词文档的路径。分为内置(built)和自定义，格式为一行一个停用词。
+data_process|由data_reprocess函数处理后的文本。
 n_rounds|循环执行的轮数。
 n_iter|循环迭代的次数。
 K|文本分类的主题数。
@@ -90,9 +88,9 @@ process_result|是否输出过程的建模结果。
 ##### 示例
 ```c
 params = specific_lda(file_path,priori_word = ['宏观经济','数字经济'],
-                 priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
-                 n_evaluate_words = 100, priori_type = 'same_alpha', init_base = 'alpha',
-                 n_top_words = 100)
+                      priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
+                      n_evaluate_words = 100, priori_type = 'same_alpha', init_base = 'alpha',
+                      n_top_words = 100)
 ```
 
 #### epu_plot
@@ -110,8 +108,8 @@ figsize|生成图片的画布比例。
 ##### 示例
 ```c
 params = specific_lda(file_path,priori_word = ['宏观经济','数字经济'],
-                 priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
-                 n_evaluate_words = 100, priori_type = 'same_alpha', init_base = 'alpha',
-                 n_top_words = 100)
+                      priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
+                      n_evaluate_words = 100, priori_type = 'same_alpha', init_base = 'alpha',
+                      n_top_words = 100)
 epu_day = epu_plot(params, 2)
 ```
