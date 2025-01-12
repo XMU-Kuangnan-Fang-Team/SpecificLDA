@@ -44,7 +44,7 @@ newspaper_data = read_simulation_data()
 用于对文本数据进行分词和去除停用词操作的函数。输入为待处理的文档路径，分词表路径和停用词路径，输出为一个包含日期和分隔文本的矩阵。
 ##### 用法
 ```c
-data_preprocess(file_path = None, user_dict_path = None, stopwords_path = None)
+data_preprocess(file_path = None, user_dict_path = 'built', stopwords_path = 'built')
 ```
 ##### 参数
 |参数|描述|
