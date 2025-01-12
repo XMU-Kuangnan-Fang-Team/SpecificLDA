@@ -5,9 +5,9 @@ from SpecificLDA.data_preprocess import data_preprocess
 from SpecificLDA.word_cloud import word_cloud
 
 
-def specific_lda(file_path = None, user_dict_path = 'built', stopwords_path = 'built', n_rounds = 5,
-                 n_iter = 5, K = 2, topic_name = 'macro_economy', priori_word = ['宏观经济','数字经济'],
-                 priori_weight = 'average', priori_word_percent = 0.2, priori_data_balance = 1,
+def specific_lda(data_process, n_rounds = 5, n_iter = 5, K = 2, topic_name = 'macro_economy', 
+                 priori_word = ['宏观经济','数字经济'], priori_weight = 'average', 
+                 priori_word_percent = 0.2, priori_data_balance = 1,
                  n_evaluate_words = 100, priori_type = 'multi_alpha', init_base = 'alpha',
                  n_top_words = 100, wordcloud = True, process_result = False):
     
@@ -29,9 +29,6 @@ def specific_lda(file_path = None, user_dict_path = 'built', stopwords_path = 'b
         'init_base':init_base,
         'n_top_words':n_top_words,
     }
-    
-    # 分词并去除停用词
-    data_process = data_preprocess(file_path, user_dict_path, stopwords_path)
     data = data_process
 
     # 获取文档
